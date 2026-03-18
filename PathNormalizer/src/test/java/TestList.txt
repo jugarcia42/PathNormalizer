@@ -1,0 +1,3 @@
+Input: .// Output ./ remove special character
+Input: ./home../ Output ./home remove extra characters
+Input: ./home/utils/../algo Output ./home/utils/algo
