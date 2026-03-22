@@ -5,33 +5,31 @@ public class PathNormalizerTest {
 
     @Test
     void test1() {
-        PathNormalizer Normalizer = new PathNormalizer();
-        assertEquals(".", Normalizer.normalize(".//"));
+        assertEquals(".", PathNormalizer.normalize(".//"));
     }
+
     @Test
     void test2() {
-        PathNormalizer Normalizer = new PathNormalizer();
-        assertEquals("./home..", Normalizer.normalize("./home../"));
+        assertEquals("./home..", PathNormalizer.normalize("./home../"));
     }
+
     @Test
     void test3() {
-        PathNormalizer Normalizer = new PathNormalizer();
-        assertEquals("./home/algo", Normalizer.normalize("./home/utils/../algo"));
+        assertEquals("./home/algo", PathNormalizer.normalize("./home/utils/../algo"));
     }
+
     @Test
     void test4() {
-        PathNormalizer Normalizer = new PathNormalizer();
-        assertEquals(null, Normalizer.normalize("algo"));
+        assertEquals(null, PathNormalizer.normalize("algo"));
     }
+
     @Test
     void test5() {
-        PathNormalizer Normalizer = new PathNormalizer();
-        assertEquals("./a..b.c", Normalizer.normalize("./a..b.c"));
+        assertEquals("./a..b.c", PathNormalizer.normalize("./a..b.c"));
     }
+
     @Test
     void test6() {
-        PathNormalizer Normalizer = new PathNormalizer();
-        assertEquals("./a/b/c", Normalizer.normalize("././a//b/./c//"));
+        assertEquals("./a/b/c", PathNormalizer.normalize("././a//b/./c//"));
     }
 }
-
